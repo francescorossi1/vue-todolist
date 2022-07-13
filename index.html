@@ -10,6 +10,16 @@
     <title>Vue To Do List</title>
 </head>
 <body>
+    <div class="container" id="root">
+        <h1 class="my-5 text-center">TO DO LIST</h1>
+        <ul class="list-group my-5">
+            <li class="list-group-item" v-for="task in tasks">
+                <span :class="{'text-decoration-line-through': task.isDone}">
+                    {{ task.name }}
+                </span>
+            </li>
+        </ul>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>

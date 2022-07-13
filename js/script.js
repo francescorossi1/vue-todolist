@@ -15,3 +15,34 @@ Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul p
 Bonus:
 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa) */
+
+console.log('vue ok',Vue)
+const root = new Vue({
+    name: 'toDoList',
+    el: '#root',
+    data: {
+        tasks: [
+            {
+                name: 'Pensare alla logica in italiano',
+                isDone: true
+            },
+            {
+                name: 'Scomporre il progetto in piccoli step',
+                isDone: false
+            },
+            {
+                name: 'Organizzare le fasi',
+                isDone: false
+            },
+            {
+                name: 'Scrivere l\'html per sistemare la parte estetica',
+                isDone: true
+            },
+            {
+                name: 'Creare la logica che consente a js di costruire il virtual DOM',
+                isDone: false
+            },
+        ]
+    }
+
+})
