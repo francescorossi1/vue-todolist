@@ -50,11 +50,16 @@ const root = new Vue({
              this.tasks = this.tasks.filter ((task, i) => i !== index)
         },
         addTask(){
-            this.tasks.push({
-                text: this.inputTask,
-                isDone: false
-            })
-            this.inputTask = ''
+            if(this.inputTask){
+                this.tasks.push({
+                    text: this.inputTask,
+                    isDone: false
+                })
+                this.inputTask = ''
+            } else return;
+        },
+        toggleActivity(task){
+            task.isDone = !task.isDone
         }
     }
 
