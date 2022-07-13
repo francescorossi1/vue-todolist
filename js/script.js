@@ -43,6 +43,11 @@ const root = new Vue({
                 isDone: false
             },
         ]
+    },
+    methods: {
+        removeTask(index){
+             this.tasks = this.tasks.filter ((task, i) => i !== index)
+            }
     }
 
 })
