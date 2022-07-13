@@ -23,31 +23,39 @@ const root = new Vue({
     data: {
         tasks: [
             {
-                name: 'Pensare alla logica in italiano',
+                text: 'Pensare alla logica in italiano',
                 isDone: true
             },
             {
-                name: 'Scomporre il progetto in piccoli step',
+                text: 'Scomporre il progetto in piccoli step',
                 isDone: false
             },
             {
-                name: 'Organizzare le fasi',
+                text: 'Organizzare le fasi',
                 isDone: false
             },
             {
-                name: 'Scrivere l\'html per sistemare la parte estetica',
+                text: 'Scrivere l\'html per sistemare la parte estetica',
                 isDone: true
             },
             {
-                name: 'Creare la logica che consente a js di costruire il virtual DOM',
+                text: 'Creare la logica che consente a js di costruire il virtual DOM',
                 isDone: false
-            },
-        ]
+            }
+        ],
+        inputTask: ''
     },
     methods: {
         removeTask(index){
              this.tasks = this.tasks.filter ((task, i) => i !== index)
-            }
+        },
+        addTask(){
+            this.tasks.push({
+                text: this.inputTask,
+                isDone: false
+            })
+            this.inputTask = ''
+        }
     }
 
 })

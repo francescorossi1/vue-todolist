@@ -15,9 +15,13 @@
         <ul class="list-group my-5">
             <li class="list-group-item d-flex justify-content-between" v-for="(task, i) in tasks">
                 <span :class="{'text-decoration-line-through': task.isDone}">
-                    {{ task.name }}
+                    {{ task.text }}
                 </span>
                 <button class="btn border-0" @click="removeTask(i)"><i class="fa-solid fa-xmark"></i></button>
+            </li>
+            <li class="list-group list-group-item">
+                <input type="text" placeholder="Inserisci un nuovo task" v-model.trim="inputTask">
+                <button class="btn btn-outline-success" @click="addTask">Aggiungi</button>
             </li>
         </ul>
     </div>
